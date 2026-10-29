@@ -52,7 +52,14 @@ app.get('/ajuda', (req, res) => {
     `;
     res.send(orientacoes);
 });
-
+//DESAFIO EXTRA
+app.get('/requisicao', (req, res) => {
+  res.json({
+    metodo: req.method,
+    caminho: req.path,
+    mensagem: "Solicitação recebida com sucesso!"
+  });
+});
 // 01 — Iniciando o servidor na porta 3000
 app.listen(porta, () => {
     console.log(`Servidor rodando em http://localhost:${porta}`);
